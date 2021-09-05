@@ -131,7 +131,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
       }
     })
   
-    const amountSLP = earnings[0].amount * (session.isAdmin.data.category / 100);
+    const amountSLP = earnings[0].amount * ((session.isAdmin as any).data.category / 100);
     const amountBRL = amountSLP * cmc.data.data['5824'].quote.BRL.price;
 
     return {

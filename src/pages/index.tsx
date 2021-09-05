@@ -167,7 +167,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
     });
 
     const amountSLP = earnings[0].amount;
-    const amountUserSLP = earnings[0].amount * (userInfo.data.category / 100);
+    const amountUserSLP = earnings[0].amount * ((userInfo as any).data.category / 100);
     const amountUserBRL = amountUserSLP * cmc.data.data['5824'].quote.BRL.price;
   
     const data = {
