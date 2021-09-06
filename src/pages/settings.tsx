@@ -12,7 +12,7 @@ export default function Settings() {
   const onSubmit = async (form: any) => {
     try {
       console.log(form)
-      // await api.put('update-user', form);
+      await api.put('api/update-user', form);
     } catch (err) {
       console.log(err);
     }

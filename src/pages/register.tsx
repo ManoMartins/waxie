@@ -33,7 +33,7 @@ export default function Register() {
         type: differenceLastRelease > +route.query.differenceLastRelease ? 'more' : 'less',
       }
       
-      await api.post('create-earning', data);
+      await api.post('/api/create-earning', data);
       route.push('/');
     } catch (err) {
       console.log(err);

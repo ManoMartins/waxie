@@ -123,6 +123,8 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
     }
   }
 
+  // console.log(process.env.HOST);
+
   try {
     const list = await fauna.query(
       q.Map(

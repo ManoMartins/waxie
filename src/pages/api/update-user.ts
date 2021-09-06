@@ -8,7 +8,7 @@ import { fauna } from "../../services/fauna";
 export default async (request: NextApiRequest, response: NextApiResponse) => {
   if (request.method === "PUT") {
     const { user: { email } } = await getSession({ req: request });
-    const { isAdmin, startedDate } = request.body;
+    const { isAdmin, startedDate, category } = request.body;
 
     const res = await fauna.query(
       q.Update(
@@ -16,6 +16,7 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
           data: {
             isAdmin,
             started_date: startedDate,
+            category,
           },
         }
       )
